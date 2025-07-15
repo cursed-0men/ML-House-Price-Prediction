@@ -1,3 +1,4 @@
+# app.py
 import streamlit as st
 import matplotlib.pyplot as plt
 import matplotlib as mpl
@@ -40,8 +41,18 @@ steps = st.sidebar.slider("Training Steps", 100, 5000, 1000, 100)
 x, y, x1, x2, x3, df = load_and_preprocess("kc_house_data.csv")
 b, residual_list = train_gradient_descent(x, y, lr=lr, steps=steps)
 
-# Tabs for layout (Prediction tab first)
-prediction_tab, loss_tab, plot3d_tab = st.tabs(["📊 Predictions", "📉 Loss Curve", "🌐 3D Visualization"])
+# Tabs for layout
+loss_tab, prediction_tab, plot3d_tab = st.tabs(["📉 Loss Curve", "📊 Predictions", "🌐 3D Visualization"])
+
+with loss_tab:
+    st.subheader("📉 Training Loss Curve")
+    fig_loss, ax_loss = plt.subplots(figsize=(6, 4))
+    ax_loss.plot(range(len(residual_list)), residual_list, color='#ff6600', linewidth=2)
+    ax_loss.set_xlabel("Iterations", fontsize=11)
+    ax_loss.set_ylabel("Mean Squared Error", fontsize=11)
+    ax_loss.set_title("Loss over Time", fontsize=13)
+    ax_loss.grid(True, linestyle='dotted', alpha=0.5)
+    st.pyplot(fig_loss)
 
 with prediction_tab:
     st.subheader("📊 Actual vs Predicted Prices")
@@ -60,16 +71,6 @@ with prediction_tab:
     if st.button("✨ Predict Price", use_container_width=True):
         price = predict_price(sqft, bed, bath, b, df)
         st.success(f"💰 Estimated Price: **${price:,.2f}**")
-
-with loss_tab:
-    st.subheader("📉 Training Loss Curve")
-    fig_loss, ax_loss = plt.subplots(figsize=(6, 4))
-    ax_loss.plot(range(len(residual_list)), residual_list, color='#ff6600', linewidth=2)
-    ax_loss.set_xlabel("Iterations", fontsize=11)
-    ax_loss.set_ylabel("Mean Squared Error", fontsize=11)
-    ax_loss.set_title("Loss over Time", fontsize=13)
-    ax_loss.grid(True, linestyle='dotted', alpha=0.5)
-    st.pyplot(fig_loss)
 
 with plot3d_tab:
     st.subheader("🌐 3D Regression Plane & Predictions")
