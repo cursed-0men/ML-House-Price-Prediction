@@ -33,6 +33,21 @@ This project implements a **Multiple Linear Regression** model *from scratch* us
 └── requirements.txt # Dependencies
 ```
 ---
+
+## 📸 Preview
+### 📉 Loss Curve
+![Loss Curve](images/1.png)
+
+### 📊 Actual vs Predicted Prices
+![Actual vs Predicted](images/2.png)
+
+### ❓ Interactive Prediction
+![Interactive Prediction](images/3.png)
+
+### 🌐 3D Regression Plane
+![3D Plot](images/4.png)
+
+---
 ## 🧑‍💻 Installation & Usage
 
 ### ✅ Prerequisites
@@ -55,22 +70,6 @@ pip install pandas numpy matplotlib seaborn streamlit
 streamlit run app.py
 ```
 Open your browser to: `http://localhost:8501`
-
----
-
-## 📸 Preview
-### 📉 Loss Curve
-![Loss Curve](images/1.png)
-
-### 📊 Actual vs Predicted Prices
-![Actual vs Predicted](images/2.png)
-
-### ❓ Interactive Prediction
-![Interactive Prediction](images/3.png)
-
-### 🌐 3D Regression Plane
-![3D Plot](images/4.png)
-
 ---
 
 ## 🧠 How It Works
