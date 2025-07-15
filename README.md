@@ -1,6 +1,6 @@
 # 🏡 House Price Prediction – Multiple Linear Regression
 
-> A complete end-to-end machine learning project using manual linear regression (no scikit-learn!), visualized beautifully using Streamlit. Predict house prices using just square footage, bedrooms, and bathrooms!
+> A complete end-to-end machine learning project using manual multiple linear regression (no scikit-learn!), visualized beautifully using Streamlit. Predict house prices using just square footage, bedrooms, and bathrooms!
 
 ---
 
