@@ -31,7 +31,7 @@ This project implements a **Multiple Linear Regression** model *from scratch* us
 ├── app.py # Streamlit interactive app
 ├── README.md # This file
 ├── requirements.txt # Dependencies
-└── /images
+└── images/
     ├── 1.png
     ├── 2.png
     ├── 3.png
